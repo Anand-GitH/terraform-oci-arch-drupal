@@ -18,7 +18,7 @@ else
   cd /var/www/	
 fi
 
-wget https://www.drupal.org/download-latest/tar.gz
+wget https://ftp.drupal.org/files/projects/drupal-10.4.7.tar.gz 
 
 if [[ $use_shared_storage == "true" ]]; then
   tar zxvf tar.gz --directory ${drupal_shared_working_dir}
