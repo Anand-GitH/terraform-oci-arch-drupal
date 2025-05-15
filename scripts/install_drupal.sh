@@ -18,15 +18,15 @@ else
   cd /var/www/	
 fi
 
-wget https://ftp.drupal.org/files/projects/drupal-10.4.7.tar.gz 
+wget https://ftp.drupal.org/files/projects/drupal-10.4.7.tar.gz -O drupal.tar.gz
 
 if [[ $use_shared_storage == "true" ]]; then
-  tar zxvf tar.gz --directory ${drupal_shared_working_dir}
+  tar zxvf drupal.tar.gz --directory ${drupal_shared_working_dir}
   cp -r ${drupal_shared_working_dir}/drupal-*/* ${drupal_shared_working_dir}
   rm -rf ${drupal_shared_working_dir}/drupal-*
   cp ${drupal_shared_working_dir}/sites/default/default.settings.php sites/default/settings.php
 else
-  tar zxvf tar.gz
+  tar zxvf drupal.tar.gz
   rm -rf html/ tar.gz
   mv drupal-* html
   cd html
