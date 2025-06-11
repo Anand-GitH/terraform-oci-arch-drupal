@@ -18,10 +18,10 @@ echo "MySQL Shell successfully installed !"
 
 if [[ $(uname -r | sed 's/^.*\(el[0-9]\+\).*$/\1/') == "el8" ]]
 then
-  dnf -y module enable php:remi-8.2
+  dnf -y module enable php:remi-8.4
   dnf -y install php php-cli php-mysqlnd php-zip php-gd php-mcrypt php-mbstring php-xml php-json php-opcache
 else
-  yum-config-manager --enable remi-php82
+  yum-config-manager --enable remi-php84
   yum -y install php php-cli php-mysqlnd php-zip php-gd php-mcrypt php-mbstring php-xml php-json php-opcache
 fi
 
