@@ -18,7 +18,9 @@ else
   cd /var/www/	
 fi
 
-wget https://ftp.drupal.org/files/projects/drupal-10.4.7.tar.gz -O drupal.tar.gz
+#Changing code to use latest Drupal
+#wget https://ftp.drupal.org/files/projects/drupal-10.4.7.tar.gz -O drupal.tar.gz
+wget https://www.drupal.org/download-latest/tar.gz -O drupal.tar.gz
 
 if [[ $use_shared_storage == "true" ]]; then
   tar zxvf drupal.tar.gz --directory ${drupal_shared_working_dir}
