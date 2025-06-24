@@ -357,6 +357,8 @@ data "template_file" "install_drupal" {
   template = file("${path.module}/scripts/install_drupal.sh")
 
   vars = {
+    is_quickstart             = var.is_quickstart
+    drupal_site               = var.drupal_site
     drupal_name               = var.drupal_name
     drupal_password           = var.drupal_password
     drupal_schema             = var.drupal_schema
