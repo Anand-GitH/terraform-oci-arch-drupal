@@ -26,7 +26,7 @@ if [[ $is_quickstart == "true" ]]; then
   php composer-setup.php --install-dir=/usr/local/bin --filename=composer
   composer config --no-plugins allow-plugins.drupal/core-composer-scaffold true
   composer require drupal/core-recommended drupal/core-composer-scaffold drush/drush --no-interaction
-  vendor/bin/drush site:install standard --db-url='mysql://${drupal_name}:${encoded_drupal_password}@${mds_ip}/${drupal_schema}' --site-name='${drupal_site}' --account-name='${drupal_account_name}' --account-pass='${drupal_account_password}' --yes
+  vendor/bin/drush site:install standard --db-url='mysql://${drupal_name}:$encoded_drupal_password@${mds_ip}/${drupal_schema}' --site-name='${drupal_site}' --account-name='${drupal_account_name}' --account-pass='${drupal_account_password}' --yes
   
   cd -
   chown apache. -R html
