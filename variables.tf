@@ -157,13 +157,21 @@ variable "vm_user" {
 }
 
 variable "is_quickstart" {
-  description = "Drupal site is created thru OCI quickstart or thru OCI Resource Manager."
+  description = "drupal site is created thru OCI quickstart or thru OCI Resource Manager."
   type        = bool
   default     = false
 }
 
 variable "drupal_site" {
-  description = "name of the Drupal Site."
+  description = "name of the drupal site."
+}
+
+variable "drupal_account_name" {
+  description = "drupal account name."
+}
+
+variable "drupal_account_password" {
+  description = "drupal account password."
 }
 
 variable "drupal_name" {
