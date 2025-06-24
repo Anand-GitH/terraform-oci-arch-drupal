@@ -359,6 +359,8 @@ data "template_file" "install_drupal" {
   vars = {
     is_quickstart             = var.is_quickstart
     drupal_site               = var.drupal_site
+    drupal_account_name       = var.drupal_account_name
+    drupal_account_password   = var.drupal_account_password
     drupal_name               = var.drupal_name
     drupal_password           = var.drupal_password
     drupal_schema             = var.drupal_schema
