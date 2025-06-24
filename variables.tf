@@ -156,6 +156,16 @@ variable "vm_user" {
   default     = "opc"
 }
 
+variable "is_quickstart" {
+  description = "Drupal site is created thru OCI quickstart or thru OCI Resource Manager."
+  type        = bool
+  default     = false
+}
+
+variable "drupal_site" {
+  description = "name of the Drupal Site."
+}
+
 variable "drupal_name" {
   description = "drupal Database User Name."
 }
