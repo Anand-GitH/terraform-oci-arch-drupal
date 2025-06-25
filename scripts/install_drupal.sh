@@ -30,6 +30,21 @@ if [[ $is_quickstart == "true" ]]; then
   echo "PATH after: $PATH"
   composer config --no-plugins allow-plugins.drupal/core-composer-scaffold true
   composer require drupal/core-recommended drupal/core-composer-scaffold drush/drush --no-interaction
+
+  # Print all variables
+  echo "drupal_name: $drupal_name"
+  echo "encoded_drupal_password: $encoded_drupal_password"
+  echo "mds_ip: $mds_ip"
+  echo "drupal_schema: $drupal_schema"
+  echo "drupal_site: $drupal_site"
+  echo "drupal_account_name: $drupal_account_name"
+  echo "drupal_account_password: $drupal_account_password"
+
+  # Build and echo full command with expanded values
+  full_cmd="vendor/bin/drush site:install standard --db-url='mysql://${drupal_name}:${encoded_drupal_password}@${mds_ip}/${drupal_schema}' --site-name='${drupal_site}' --account-name='${drupal_account_name}' --account-pass='${drupal_account_password}' --yes" 
+  echo "Executing: $full_cmd"
+
+  # Execute the command
   vendor/bin/drush site:install standard --db-url='mysql://${drupal_name}:$encoded_drupal_password@${mds_ip}/${drupal_schema}' --site-name='${drupal_site}' --account-name='${drupal_account_name}' --account-pass='${drupal_account_password}' --yes
   
   cd -
