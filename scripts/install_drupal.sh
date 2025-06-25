@@ -1,5 +1,6 @@
 #!/bin/bash
-#set -x
+set -x
+set +H
 
 is_quickstart="${is_quickstart}"
 drupal_site="${drupal_site}"
