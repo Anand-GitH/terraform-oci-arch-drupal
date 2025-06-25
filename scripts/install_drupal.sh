@@ -41,7 +41,7 @@ if [[ $is_quickstart == "true" ]]; then
   echo "drupal_account_password: $drupal_account_password"
 
   # Build and echo full command with expanded values
-  full_cmd="vendor/bin/drush site:install standard --db-url='mysql://${drupal_name}:${encoded_drupal_password}@${mds_ip}/${drupal_schema}' --site-name='${drupal_site}' --account-name='${drupal_account_name}' --account-pass='${drupal_account_password}' --yes" 
+  full_cmd="vendor/bin/drush site:install standard --db-url='mysql://${drupal_name}:$encoded_drupal_password@${mds_ip}/${drupal_schema}' --site-name='${drupal_site}' --account-name='${drupal_account_name}' --account-pass='${drupal_account_password}' --yes" 
   echo "Executing: $full_cmd"
 
   # Execute the command
