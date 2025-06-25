@@ -9,7 +9,7 @@ drupal_schema="${drupal_schema}"
 drupal_name="${drupal_name}"
 drupal_password="${drupal_password}"
 #encoded_drupal_password=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))" "$drupal_password")
-encoded_drupal_password=drupal_password
+encoded_drupal_password=$drupal_password
 mds_ip="${mds_ip}"
 
 if [[ $is_quickstart == "true" ]]; then
