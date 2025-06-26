@@ -13,6 +13,15 @@ drupal_password="${drupal_password}"
 encoded_drupal_password=$drupal_password
 mds_ip="${mds_ip}"
 
+echo "drupal_name: $drupal_name"
+echo "encoded_drupal_password: $encoded_drupal_password"
+echo "mds_ip: $mds_ip"
+echo "drupal_schema: $drupal_schema"
+echo "drupal_site: $drupal_site"
+echo "drupal_account_name: $drupal_account_name"
+echo "drupal_account_password: $drupal_account_password"
+
+: <<'END_COMMENT'
 if [[ $is_quickstart == "true" ]]; then
   cd /var/www/
   # Changing code to use latest Drupal
@@ -108,5 +117,7 @@ fi
 
 systemctl start httpd
 systemctl enable httpd
+
+END_COMMENT
 
 echo "Drupal installed and Apache started !"
